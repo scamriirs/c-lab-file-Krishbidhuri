@@ -1,0 +1,73 @@
+using System;
+
+namespace AdmissionEnquiry
+{
+    // Define a class for Admission Enquiry
+    class AdmissionForm
+    {
+        // Properties of the form
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public string Course { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+
+        // Method to display the enquiry details
+        public void DisplayEnquiryDetails()
+        {
+            Console.WriteLine("\nAdmission Enquiry Details:");
+            Console.WriteLine($"Name: {Name}");
+            Console.WriteLine($"Age: {Age}");
+            Console.WriteLine($"Course: {Course}");
+            Console.WriteLine($"Email: {Email}");
+            Console.WriteLine($"Phone Number: {PhoneNumber}");
+        }
+
+        // Method to collect data from the user
+        public void CollectData()
+        {
+            Console.WriteLine("Welcome to the Admission Enquiry Form");
+            Console.WriteLine("-------------------------------------");
+
+            // Collecting user's name
+            Console.Write("Enter your Name: ");
+            Name = Console.ReadLine();
+
+            // Collecting user's age
+            Console.Write("Enter your Age: ");
+            Age = Convert.ToInt32(Console.ReadLine());
+
+            // Collecting the course the user is interested in
+            Console.Write("Enter the Course you are interested in: ");
+            Course = Console.ReadLine();
+
+            // Collecting email address
+            Console.Write("Enter your Email: ");
+            Email = Console.ReadLine();
+
+            // Collecting phone number
+            Console.Write("Enter your Phone Number: ");
+            PhoneNumber = Console.ReadLine();
+        }
+    }
+
+    // Main class to run the program
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Creating an instance of the AdmissionForm class
+            AdmissionForm form = new AdmissionForm();
+
+            // Collecting data from the user
+            form.CollectData();
+
+            // Displaying the enquiry details entered by the user
+            form.DisplayEnquiryDetails();
+
+            // Program will wait until the user presses a key before exiting
+            Console.WriteLine("\nThank you for your enquiry!");
+            Console.ReadKey();
+        }
+    }
+}
